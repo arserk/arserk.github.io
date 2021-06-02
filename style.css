@@ -9,10 +9,73 @@
 
 
 body { /*Applied custom font 'Raleway'*/
-	font-family: 'raleway', Arial, Helvetica, serif;
+	font-family: 'raleway', Arial, Helvetica, sans-serif;
 }
 
-/*Page elements*/ 
+/*General page layout */
+
+#header_and_page {
+	margin-left: 25px;
+}
+
+h1 {
+	font-size: 1.4em;
+	font-weight: bolder;
+}
+
+/*Header layout*/
+
+header {
+	display: flex;
+}
+
+#logo {
+/*propietes logo*/
+}
+
+#subscribe {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+	font-weight: bolder;
+	text-decoration: none;
+	color: #0065FC;
+}
+
+/*Top Navigation menu*/
+nav {
+	height: max-content;
+	position: relative;
+	top: -24px;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+}
+
+nav li {
+	margin-right: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	padding-top: 24px;
+}
+
+nav a:hover {
+	color: #0065FC;
+	border-top: 2px solid #0065FC;
+}
+
+/*Body(?) layout */
+
+/*Search box*/
+form {
+	display: flex;
+}
 
 /*Footer layout*/
 
@@ -21,10 +84,11 @@ footer {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
+	padding: 24px;
 }
 
 .foot-list {
-	margin: 25px auto 25px 50px;
+	margin-right: auto;
 	white-space: nowrap;
 }
 

@@ -7,11 +7,29 @@
 </head>
 
 <body>
-	<div id="page_block">
-		
+	<div id="header_and_page">
+		<header> <!--logo=link to homepage / edit 'href' ?-->
+			<a id="logo" href="index.html"><img src="images/logo/Reservia.svg" alt="Logo Reservia"></a>
+			<a id="subscribe" href=""><p>S'inscrire</p></a> <!--subsribe=link to appropriate page-->
+			<nav>
+				<ul>
+					<li><a href="#">Hébergements</a></li>
+					<li><a href="#">Activités</a></li>
+				</ul>
+			</nav>
+		</header>
+		<h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+		<p>En plein centre ville ou en pleine nature</p>
+		<form method="post" acton="process.php">
+			<p>
+				<label></label>
+				<input type="search" name="city" id="search_city" placeholder="Marseille,France" />
+			</p>
+			<input type="submit" idvalue="Recherche" />
+		</form>
 	</div>
 	<footer>
-		<!--Complete appropriate destination pages in Links-->
+		<!--Add appropriate destination pages in Links-->
 		<!--For additional menus in the footer, use "class='foot-list'"-->
 		<div class="foot-list">
 			<dl>
