@@ -209,6 +209,7 @@ i[class="fas fa-info"] {
 
 section * {
 	text-decoration: none;
+	color: black;
 }
 
 #activites, #hebergements{
@@ -225,6 +226,10 @@ section * {
 	box-shadow: 5px 5px 25px lightgray;
 }
 
+section {
+	border-radius: 25px;
+}
+
 /* Section "Les plus populaires" */
 
 #plus_populaire {
@@ -237,6 +242,7 @@ section * {
 #titre, #titre h1 {
 	display: inline-block;
 	white-space: nowrap;
+	margin: 10px auto 10px auto;
 }
 
 i[class="fas fa-chart-line"] {
@@ -257,6 +263,7 @@ i[class="fas fa-chart-line"] {
 	float: left;
 	border-radius: 20px 0px 0px 20px;
 	max-width: 120px;
+	max-height: 120px;
 	overflow: hidden;
 	text-indent: -40px;
 }
@@ -292,6 +299,7 @@ i[class="fas fa-chart-line"] {
 	margin: 5px;
 	padding: 0;
 	border: 1px solid blue;
+	overflow: hidden;
 }
 
 /* colonnes pour section
@@ -305,8 +313,8 @@ i[class="fas fa-chart-line"] {
 /*images*/
 /*TEMPORAIRE!!*/
 img {
-	max-width: 100%;
-	max-height: 200px;
+	max-width: 300px;
+	max-height: 300px;
 }
 /*TEMPORAIRE!!*/
 
