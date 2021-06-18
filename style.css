@@ -19,10 +19,6 @@ body { /*Applied custom font 'Raleway'*/
 	display: flex;
 }
 
-header, #page {
-	margin: 30px 5% 0px 5%;
-}
-
 h1 {
 	font-size: 1.3em;
 	font-weight: bolder;
@@ -41,16 +37,20 @@ h2 {
 
 .star-blue {
 	color: #0065FC;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 .star-lgray {
 	color: lightgray;
-	font-size: 0.9em;
+	font-size: 0.8em;
 }
 
 
 /*######### Header layout #########*/
+
+header {
+	margin: 30px 5% 0px 5%;
+}
 
 #header_top {
 	justify-content: flex-end;
@@ -207,6 +207,14 @@ i[class="fas fa-info"] {
 
 /* general */
 
+#page {
+	margin: 20px 5% 0px 5%;
+}
+
+section {
+	border-radius: 25px;
+}
+
 section * {
 	text-decoration: none;
 	color: black;
@@ -218,60 +226,75 @@ section * {
 
 #block_page_1 {
 	flex-wrap: wrap-reverse;
+	justify-content: space-between;
 }
 
 .cell-1, .cell-2, .cell-3 {
 	background-color: white;
 	border-radius: 25px;
 	box-shadow: 5px 5px 25px lightgray;
-}
-
-section {
-	border-radius: 25px;
+	overflow: hidden;
 }
 
 /* Section "Les plus populaires" */
 
-#plus_populaire {
+#plus_populaires {
 	background-color: #F2F2F2;
 	flex-direction: column;
 	padding: 15px;
+	max-width: 600px;
 	border: 1px solid red;
 }
 
 #titre, #titre h1 {
 	display: inline-block;
 	white-space: nowrap;
-	margin: 10px auto 10px auto;
+	margin: 15px auto 10px 12px;
 }
 
 i[class="fas fa-chart-line"] {
-	margin-left: 100px;
+	margin-left: 190px;
+	font-size: 1.5em;
 }
 
 .cell-1 {
 	margin: 20px;
-	padding: 25px;
-	border: 1px solid blue;
-}
-
-#plus_populaire img {
-	max-width: 300px;
+	padding: 6px;
+	width: 400px;
+	height: 160px;
 }
 
 .image-crop1 {
 	float: left;
 	border-radius: 20px 0px 0px 20px;
-	max-width: 120px;
-	max-height: 120px;
+	width: 150px;
+	height: 160px;
 	overflow: hidden;
-	text-indent: -40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+
+.image-crop1 img {
+	max-height: 260px;
+	max-width: 260px;
+}
+
+.cell-1  h2, .cell-1  p {
+	margin-right: 60px;
+}
+
+.cell-1 i {
+	position: relative;
+	top: 30px;
 }
 
 /*Section "Hébergements à Marseille" */
 
 #hebergements {
-	max-width: 70%;
+	padding: 20px 20px 20px 30px;
+	max-width: 65%;
 	border: 1px solid red;
 }
 
@@ -280,14 +303,42 @@ i[class="fas fa-chart-line"] {
 }
 
 .cell-2 {
-	margin: 20px;
-	padding: 25px;
-	border: 1px solid blue;
+	margin: 20px 20px 20px 0px;
+	padding: 5px;
+	width: 30%;
+	min-width: 250px;
+}
+
+.image-crop2 {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	height: 140px;
+	border-radius: 20px 20px 0 0;
+}
+
+.image-crop2 img {
+	max-width: 100%;
+	height: auto;
+}
+
+.cell-2  h2 {
+	margin: 10px 0 5px 12px;
+}
+
+.cell-2  p {
+	margin: 5px 0 5px 12px;
+}
+
+.cell-2 i {
+	position: relative;
+	left: 12px;
 }
 
 /* Section "Activités à Marseille" */
 
 #activites {
+	margin-top: 25px;
 	border: 1px solid red;
 }
 
@@ -299,24 +350,33 @@ i[class="fas fa-chart-line"] {
 	margin: 5px;
 	padding: 0;
 	border: 1px solid blue;
+}
+
+.column {
+	flex-direction: column;
+	max-width: 25%;
+	height: 450px;
+}
+
+.image-crop3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80%;
 	overflow: hidden;
 }
 
-/* colonnes pour section
-.column {
-	display: flex;
-	flex-direction: column;
-	flex: 25%;
-	max-width: 25%;
-}*/
-
-/*images*/
-/*TEMPORAIRE!!*/
-img {
-	max-width: 300px;
-	max-height: 300px;
+.img-wide {
+	max-width: 100%;
+	height: auto;
 }
-/*TEMPORAIRE!!*/
+
+#activites h2 {
+	display: block;
+	height: 50px;
+	margin: 0;
+	border: 1px solid green;
+}
 
 /*######### Footer layout #########*/
 
@@ -353,15 +413,45 @@ footer {
 /*######### Moblie  rules #########
 ##work in progress##
 */
-@media (max-width: 1024px) {
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 767.98px) {
+	.column {
+		flex: 100%;
+		max-width: 100%;
+	}
+	#hebergements {
+		max-width: 100%;
+	}
+	#plus_populaires {
+		max-width: 100%;
+	}
 	footer {
 		flex-direction: column;
 	}
 }
 
-@media (max-width: 600px) {
-	.column {
-	  flex: 100%;
-	  max-width: 100%;
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {
+	
+}
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {
+	.cell-2 {
+		width: fit-content;
 	}
-  }
+}
+
+/* A rajoutter:
+
+regle- Hebergements cell-2 prennent 90% de la taille,
+regle- section Hebergement prends plus de 60%
+
+regle- changer la marge quand ca flex (entre populaires et hebergement)
+regle- changer couleur fond Hebergement quand flex
+
+*/
