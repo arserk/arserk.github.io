@@ -242,7 +242,6 @@ section * {
 	background-color: #F2F2F2;
 	flex-direction: column;
 	padding: 15px;
-	max-width: 600px;
 	border: 1px solid red;
 }
 
