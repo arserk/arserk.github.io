@@ -1,0 +1,12 @@
+footer{
+    * {
+        color: white;
+    }
+    background-color: rgba(8, 8, 8, 0.7);
+    p {
+        @extend h1; //'Shrikhand' font, in _typography
+    }
+    a {
+        display: flex;
+    }
+}

@@ -1,0 +1,16 @@
+.heart {
+    > .fas {
+        display: none;
+    }
+    color: black;
+    transition: color 600ms;
+    &:hover {
+        > .fas {
+            display: inline;
+        }
+        > .far {
+            display: none;
+        }
+        color: red;
+    }
+}

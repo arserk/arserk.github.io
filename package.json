@@ -1,0 +1,19 @@
+{
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arserk/ArseniSerkov_3_09072021.git"
+  },
+  "author": "\"Arseni Serkov\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arserk/ArseniSerkov_3_09072021/issues"
+  }
+}

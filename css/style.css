@@ -1,0 +1,51 @@
+body {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, footer p {
+  font-family: "Shrikhand", cursive;
+}
+
+.heart {
+  color: black;
+  transition: color 600ms;
+}
+.heart > .fas {
+  display: none;
+}
+.heart:hover {
+  color: red;
+}
+.heart:hover > .fas {
+  display: inline;
+}
+.heart:hover > .far {
+  display: none;
+}
+
+footer {
+  background-color: rgba(8, 8, 8, 0.7);
+}
+footer * {
+  color: white;
+}
+footer a {
+  display: flex;
+}
+
+.image-crop {
+  overflow: hidden;
+}
+.image-crop img {
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=style.css.map */
