@@ -1,6 +1,69 @@
-.image-crop {
+/*image layout, on homepage*/
+.image-crop { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    height: 200px;
     img {
-        max-width: 500px;
+        max-width: 100%;
+        position: relative;
+        bottom: 30px;
+    }
+}
+
+form { 
+    @include dark-background(white, 10%);
+    justify-content: center;
+    align-items: center;
+    color: lighten(black, 30%);
+    box-shadow: 0 20px 10px -20px darken(white, 30%) inset;
+    height: 4em;
+    input {
+        font-family: inherit;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        text-align: center;
+        &::placeholder, &:focus {
+            font-size: medium;
+            font-weight: bold;
+            color: lighten(black, 30%);
+            opacity: 1; /*for Firefox*/
+        }
+    }
+}
+
+.home1 {
+    text-align: center;
+    p {
+        color: lighten(black, 40%);
+    }
+}
+
+.home2 {
+    .cell {
+        background-color: darken(white, 5%);
+        height: 4em;
+        align-items: center;
+        font-weight: bold;
+        i {
+            color: darkgray;
+        }
+        i , span {
+            margin:20px;
+        }
+        &:hover {
+            background-color: lighten($color-primary, 33%);
+            i {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.home3 {
+    .cell {
+        flex-direction: column;
     }
 }

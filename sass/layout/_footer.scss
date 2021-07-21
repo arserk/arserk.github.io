@@ -1,12 +1,18 @@
 footer{
-    * {
-        color: white;
-    }
+    padding: 0.5rem 2rem 3rem 6%;
+    margin-top: auto;
+    color: white;
     background-color: rgba(8, 8, 8, 0.7);
     p {
-        @extend h1; //'Shrikhand' font, in _typography
+        margin-bottom: 1rem;
+        font-size: large;
+        @extend %font-shrikhand;
     }
     a {
+        margin-top: 0.5em;
         display: flex;
+        i {
+            margin-right: 10px;
+        }
     }
 }

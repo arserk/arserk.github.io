@@ -3,5 +3,5 @@ body {
 }
 
 h1 {
-    font-family: "Shrikhand", cursive;
+    @extend %font-shrikhand;
 }

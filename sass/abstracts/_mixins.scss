@@ -1,0 +1,7 @@
+@mixin dark-background($color, $percent) {
+    background-color: darken($color, $percent);
+}
+
+@mixin box-shadow($color, $percent) {
+    box-shadow: 5px 5px 10px darken($color, $percent);
+}
