@@ -1,5 +1,5 @@
 header {
-    padding-top: 2em;
+    padding-top: 1.5em;
     padding-bottom: 1em;
     display: flex;
     justify-content: center;
@@ -9,6 +9,14 @@ header {
     a {
         position: absolute;
         left: 5%;
-        top: 2.5em;
+        top: 1.8em;
+        
+    }
+    i {
+        color: lighten(black, 30%);
+        &:hover {
+            color: $color-primary;
+            transform: scale(1.1);
+        }
     }
 }

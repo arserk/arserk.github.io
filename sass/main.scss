@@ -7,9 +7,12 @@
 
 @import './components/buttons';
 @import './components/heart';
+@import './components/cells';
+@import './components/overlay';
+@import './components/loading-spinner';
 
 @import './layout/header';
 @import './layout/footer';
 
-@import './pages/home';
+@import './pages/homepage';
 @import './pages/menu';

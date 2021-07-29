@@ -1,3 +1,51 @@
-i.fa-check-circle { //temorary !
-    display: none;
+section.menu1 {
+    flex-direction: column;
+    position: relative;
+    height: 20em;
+    div { 
+        img { /*image top of page*/
+            width: 110%;
+        }
+        + div { /*restaurant name layout*/
+            background-color: inherit;
+            border-radius: 35px 35px 0px 0px;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            h1 {
+                margin-left: $margin + 2%;
+            }
+            .heart {
+                margin-right: $margin + 2%;
+            }
+        }
+    }
+}
+
+section.menu2 {
+    padding-top: 0;
+    h3 {
+        padding-left: 10px;
+        &:after {
+            content:'';
+            display: block;
+            width: 2.5em;
+            margin-top: 5px;
+            border: 2px solid $color-tertiary;
+            background-color: $color-tertiary;
+        }
+    }
+    .cell {
+        padding: 8px 10px 8px 5px;
+        flex-direction: column;
+        height: 3.5em;
+        div {
+            justify-content: space-between;
+        }
+        p + strong {
+            color: lighten(black, 25%);
+        }
+    }
 }

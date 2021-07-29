@@ -6,11 +6,16 @@
     transition: color 600ms;
     &:hover {
         > .fas {
-            display: inline;
+            display: inline-block;
         }
         > .far {
             display: none;
         }
         color: red;
     }
+}
+
+.fa-heart {
+    font-size: x-large;
+    transform: scale(1, 1.1);
 }

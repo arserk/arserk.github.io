@@ -1,0 +1,25 @@
+.overlay-container {
+    position: relative;
+    &:hover {
+        .overlay {
+            width: 15%;
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: $color-tertiary;
+    width: 0;
+    height: 100%;
+    i {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        overflow: hidden;
+        color: white;
+    }
+}
