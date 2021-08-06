@@ -84,7 +84,7 @@ section.home3 {
     .cell {
         flex-direction: column;
         overflow: hidden;
-        @include child-on-left(4);
+        @include child-on-right(4);
         .image-crop{
             margin-bottom: 5px;
             height: 200px;

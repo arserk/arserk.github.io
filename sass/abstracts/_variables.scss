@@ -4,6 +4,7 @@ $color-tertiary: #99E2D0;
 
 $color-background: white;
 $color-greyed-out: lighten(black, 30%);
+$color-gradiant: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
 
 $margin: 5%;
 

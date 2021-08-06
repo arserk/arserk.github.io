@@ -15,7 +15,7 @@ $spinner-width: 8px;
     height: 100%;
     width: 100%;
     position: fixed;
-    background-color: $color-background;
+    background-color: rgba($color-background, 0.7);
     z-index: 2;
     animation: hide 0s ease-in #{$spin-times}s forwards;
     @keyframes hide {

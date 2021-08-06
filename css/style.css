@@ -48,6 +48,7 @@ h1 {
   font-weight: normal;
 }
 
+/* "h3" = categorie names in "menues"*/
 h3 {
   font-weight: normal;
   color: #4d4d4d;
@@ -75,28 +76,54 @@ button:hover {
   transition: box-shadow 100ms ease-in;
 }
 
-.heart {
-  color: black;
-  transition: color 600ms;
+.heart .fas {
+  color: transparent;
 }
-.heart > .fas {
-  display: none;
-}
-.heart:hover {
-  color: red;
-}
-.heart:hover > .fas {
-  display: inline-block;
-}
-.heart:hover > .far {
-  display: none;
+.heart:hover > .fas, .heart:hover .far, .heart:active > .fas, .heart:active .far {
+  animation: fill 400ms forwards;
 }
 
+@keyframes fill {
+  to {
+    color: #9356DC;
+  }
+}
 .fa-heart {
   font-size: x-large;
   transform: scale(1, 1.1);
 }
 
+/*
+.heart {
+    position: relative;
+    overflow: hidden;
+    .fas {
+        color: transparent;
+        &::after {
+            content: "";
+            display: block;
+            padding: 0.50em;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: $color-gradiant;
+            transform: translateY(1em);
+            overflow: hidden;
+        }
+    }
+    &:hover {
+        & .fas::after {
+            animation: fill 600ms forwards ease;
+        }
+    }
+
+}
+@keyframes fill {
+    to {
+        transform: translateY(0);
+    }
+}
+*/
 .cell {
   position: relative;
   margin-bottom: 20px;
@@ -124,28 +151,31 @@ button:hover {
   transform: scale(1.01);
 }
 
-.overlay-container {
-  position: relative;
-}
-.overlay-container:hover .overlay {
-  width: 15%;
-}
-
 .overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #99E2D0;
-  width: 0;
   height: 100%;
+  overflow: hidden;
+  flex: 0.0001;
+  transform: translateX(100%);
+  transform-origin: 100%;
+  transition: all 500ms ease-out;
 }
 .overlay i {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  overflow: hidden;
+  transition: all 300ms ease;
+  transition-delay: 200ms;
   color: white;
+  transform: rotate(-270deg);
+}
+
+.overlay-container:hover .overlay {
+  transform: translateX(0);
+  flex: 1.5;
+}
+.overlay-container:hover .overlay i {
+  transform: rotate(0deg);
 }
 
 /*.spinner {
@@ -163,7 +193,7 @@ button:hover {
   height: 100%;
   width: 100%;
   position: fixed;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   z-index: 2;
   animation: hide 0s ease-in 2s forwards;
 }
@@ -208,6 +238,31 @@ button:hover {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+section.menu2 .cell:nth-child(1) {
+  animation: progressive 500ms ease-in;
+  animation-delay: 0.5s;
+}
+section.menu2 .cell:nth-child(2) {
+  animation: progressive 500ms ease-in;
+  animation-delay: 1s;
+}
+section.menu2 .cell:nth-child(3) {
+  animation: progressive 500ms ease-in;
+  animation-delay: 1.5s;
+}
+section.menu2 .cell:nth-child(4) {
+  animation: progressive 500ms ease-in;
+  animation-delay: 2s;
+}
+
+@keyframes progressive {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }
 header {
@@ -391,15 +446,20 @@ section.menu2 h3:after {
   background-color: #99E2D0;
 }
 section.menu2 .cell {
-  padding: 8px 10px 8px 5px;
-  flex-direction: column;
+  overflow: hidden;
   height: 3.5em;
-}
-section.menu2 .cell div {
   justify-content: space-between;
 }
-section.menu2 .cell p + strong {
-  color: #404040;
+section.menu2 .cell p, section.menu2 .cell strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+section.menu2 .cell > div:first-child {
+  flex-grow: 2;
+}
+section.menu2 .cell div > div {
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=style.css.map */

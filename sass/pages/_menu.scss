@@ -38,14 +38,19 @@ section.menu2 {
         }
     }
     .cell {
-        padding: 8px 10px 8px 5px;
-        flex-direction: column;
-        height: 3.5em;
-        div {
-            justify-content: space-between;
+        p, strong {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
-        p + strong {
-            color: lighten(black, 25%);
+        overflow: hidden;
+        height: 3.5em;
+        justify-content: space-between;
+        > div:first-child {
+            flex-grow: 2;
+        }
+        div > div {
+            justify-content: space-between;
         }
     }
 }

@@ -1,0 +1,18 @@
+
+section.menu2 .cell{
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation: progressive 500ms ease-in;
+            animation-delay: #{$i * 0.5}s;
+        }
+    }
+}
+
+@keyframes progressive {
+    from {
+        transform: translateY(100px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}

@@ -1,17 +1,17 @@
+
 .heart {
-    > .fas {
-        display: none;
+    .fas {
+        color: transparent;
     }
-    color: black;
-    transition: color 600ms;
-    &:hover {
-        > .fas {
-            display: inline-block;
+    &:hover, &:active {
+        > .fas, .far {
+            animation: fill 400ms forwards;
         }
-        > .far {
-            display: none;
-        }
-        color: red;
+    }
+}
+@keyframes fill {
+    to {
+        color: $color-primary;
     }
 }
 
@@ -19,3 +19,35 @@
     font-size: x-large;
     transform: scale(1, 1.1);
 }
+
+/*
+.heart {
+    position: relative;
+    overflow: hidden;
+    .fas {
+        color: transparent;
+        &::after {
+            content: "";
+            display: block;
+            padding: 0.50em;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background: $color-gradiant;
+            transform: translateY(1em);
+            overflow: hidden;
+        }
+    }
+    &:hover {
+        & .fas::after {
+            animation: fill 600ms forwards ease;
+        }
+    }
+    
+}
+@keyframes fill {
+    to {
+        transform: translateY(0);
+    }
+}
+*/

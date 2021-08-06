@@ -2,7 +2,7 @@
     box-shadow: 5px 5px 10px darken($color-background, $percent);
 }
 
-@mixin child-on-left($child) {
+@mixin child-on-right($child) {
     :nth-child(#{$child}) {
         align-self: flex-end;
         position: relative;

@@ -1,25 +1,30 @@
-.overlay-container {
-    position: relative;
-    &:hover {
-        .overlay {
-            width: 15%;
-        }
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-tertiary;
+    height: 100%;
+    overflow: hidden;
+    flex: 0.0001;
+    transform: translateX(100%);
+    transform-origin: 100%;
+    transition: all 500ms ease-out;
+    i {
+        transition: all 300ms ease;
+        transition-delay: 200ms;
+        color: white;
+        transform: rotate(-270deg);
     }
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    overflow: hidden;
-    background-color: $color-tertiary;
-    width: 0;
-    height: 100%;
-    i {
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        overflow: hidden;
-        color: white;
+.overlay-container {
+    &:hover {
+        .overlay {
+            transform: translateX(0);
+            flex: 1.5;
+            i {
+                transform: rotate(0deg);
+            }
+        }
     }
 }

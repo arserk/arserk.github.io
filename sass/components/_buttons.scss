@@ -9,7 +9,7 @@ button {
     min-width: 150px;
     height: 40px;
     padding: 0 1.5em 0 1.5em;
-    background: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
+    background: $color-gradiant;
     color: white;
     @include box-shadow(20%);
     &:hover {
