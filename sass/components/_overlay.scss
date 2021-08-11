@@ -5,7 +5,8 @@
     background-color: $color-tertiary;
     height: 100%;
     overflow: hidden;
-    flex: 0.0001;
+    flex-grow: 0;
+    width: 0;
     transform: translateX(100%);
     transform-origin: 100%;
     transition: all 500ms ease-out;
@@ -18,10 +19,15 @@
 }
 
 .overlay-container {
+    flex-wrap: nowrap;
+    > div {
+        min-width: 0;
+    }
     &:hover {
         .overlay {
             transform: translateX(0);
-            flex: 1.5;
+            width: 20%;
+            min-width: 20%;
             i {
                 transform: rotate(0deg);
             }

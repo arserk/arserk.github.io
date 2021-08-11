@@ -6,6 +6,7 @@ footer p, h1 {
 
 body {
   min-height: 100vh;
+  min-width: 300px;
   margin: 0;
   box-sizing: border-box;
 }
@@ -16,6 +17,9 @@ a {
 }
 a:visited {
   color: inherit;
+}
+a:active {
+  outline: none;
 }
 
 .flex-block {
@@ -44,7 +48,7 @@ body {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: normal;
 }
 
@@ -52,6 +56,11 @@ h1 {
 h3 {
   font-weight: normal;
   color: #4d4d4d;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: large;
 }
 
 button {
@@ -76,54 +85,39 @@ button:hover {
   transition: box-shadow 100ms ease-in;
 }
 
-.heart .fas {
-  color: transparent;
-}
-.heart:hover > .fas, .heart:hover .far, .heart:active > .fas, .heart:active .far {
-  animation: fill 400ms forwards;
-}
-
-@keyframes fill {
-  to {
-    color: #9356DC;
-  }
-}
 .fa-heart {
   font-size: x-large;
   transform: scale(1, 1.1);
 }
 
-/*
-.heart {
-    position: relative;
-    overflow: hidden;
-    .fas {
-        color: transparent;
-        &::after {
-            content: "";
-            display: block;
-            padding: 0.50em;
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            background: $color-gradiant;
-            transform: translateY(1em);
-            overflow: hidden;
-        }
-    }
-    &:hover {
-        & .fas::after {
-            animation: fill 600ms forwards ease;
-        }
-    }
+.heart .fas {
+  color: transparent;
+  background: linear-gradient(355deg, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  background-size: 100% 60%;
+  background-repeat: no-repeat;
+  background-position: 50% 200%;
+}
+.heart:hover .fas {
+  animation: bgFadeIn 600ms ease forwards;
+}
+.heart:hover .far {
+  animation: fadeOut 500ms ease forwards;
+}
 
+@keyframes bgFadeIn {
+  to {
+    background-position: 50% 50%;
+  }
 }
-@keyframes fill {
-    to {
-        transform: translateY(0);
-    }
+@keyframes fadeOut {
+  0%, 70% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
 }
-*/
 .cell {
   position: relative;
   margin-bottom: 20px;
@@ -134,8 +128,11 @@ button:hover {
 .cell--rounded {
   border-radius: 20px;
 }
-.cell strong, .cell p {
-  margin: 5px 0 0 10px;
+.cell h4, .cell p {
+  margin: 6px 0 0 10px;
+}
+.cell p {
+  margin-bottom: 10px;
 }
 .cell__new {
   border-radius: 4px;
@@ -158,7 +155,8 @@ button:hover {
   background-color: #99E2D0;
   height: 100%;
   overflow: hidden;
-  flex: 0.0001;
+  flex-grow: 0;
+  width: 0;
   transform: translateX(100%);
   transform-origin: 100%;
   transition: all 500ms ease-out;
@@ -170,15 +168,23 @@ button:hover {
   transform: rotate(-270deg);
 }
 
+.overlay-container {
+  flex-wrap: nowrap;
+}
+.overlay-container > div {
+  min-width: 0;
+}
 .overlay-container:hover .overlay {
   transform: translateX(0);
-  flex: 1.5;
+  width: 20%;
+  min-width: 20%;
 }
 .overlay-container:hover .overlay i {
   transform: rotate(0deg);
 }
 
-/*.spinner {
+/* Spinner variant
+  .spinner {
     border: 16px solid #f3f3f3;
     border-top: 16px solid $color-primary;
     border-radius: 50%;
@@ -240,29 +246,51 @@ button:hover {
     transform: rotate(360deg);
   }
 }
-section.menu2 .cell:nth-child(1) {
-  animation: progressive 500ms ease-in;
-  animation-delay: 0.5s;
-}
-section.menu2 .cell:nth-child(2) {
-  animation: progressive 500ms ease-in;
-  animation-delay: 1s;
-}
-section.menu2 .cell:nth-child(3) {
-  animation: progressive 500ms ease-in;
-  animation-delay: 1.5s;
-}
-section.menu2 .cell:nth-child(4) {
-  animation: progressive 500ms ease-in;
-  animation-delay: 2s;
+section.menu1, .menu2 {
+  opacity: 0;
+  animation: progressive-box 1800ms ease forwards;
 }
 
-@keyframes progressive {
+section.menu2 .cell {
+  opacity: 0;
+}
+section.menu2 .cell:nth-child(1) {
+  animation: progressive-cells 500ms ease-in forwards;
+  animation-delay: 0.3s;
+}
+section.menu2 .cell:nth-child(2) {
+  animation: progressive-cells 500ms ease-in forwards;
+  animation-delay: 0.6s;
+}
+section.menu2 .cell:nth-child(3) {
+  animation: progressive-cells 500ms ease-in forwards;
+  animation-delay: 0.9s;
+}
+section.menu2 .cell:nth-child(4) {
+  animation: progressive-cells 500ms ease-in forwards;
+  animation-delay: 1.2s;
+}
+section.menu2 .cell:nth-child(5) {
+  animation: progressive-cells 500ms ease-in forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes progressive-cells {
   from {
-    transform: translateY(100px);
+    transform: translateY(20px);
+    opacity: 0;
   }
   to {
     transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes progressive-box {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 header {
@@ -350,7 +378,7 @@ section.home2 .cell i {
   margin-left: 30px;
   color: gray;
 }
-section.home2 .cell strong {
+section.home2 .cell h4 {
   margin-bottom: 5px;
 }
 section.home2 .cell .circle {
@@ -387,16 +415,19 @@ section.home2 .cell:hover i {
 section.home3 .cell {
   flex-direction: column;
   overflow: hidden;
+  position: relative;
+  /*first declaration=element(child number), 
+  second declaration=height of element (in px, from bottom)*/
+  padding-bottom: 5px;
 }
 section.home3 .cell :nth-child(4) {
-  align-self: flex-end;
-  position: relative;
-  right: 6%;
-  top: -2rem;
+  position: absolute;
+  right: 5%;
+  bottom: 22px;
 }
 section.home3 .cell .image-crop {
   margin-bottom: 5px;
-  height: 200px;
+  height: 170px;
 }
 section.home3 .cell img {
   height: auto;
@@ -443,19 +474,26 @@ section.menu2 h3:after {
   width: 2.5em;
   margin-top: 5px;
   border: 2px solid #99E2D0;
-  background-color: #99E2D0;
 }
 section.menu2 .cell {
   overflow: hidden;
-  height: 3.5em;
+  height: 4.5em;
   justify-content: space-between;
 }
-section.menu2 .cell p, section.menu2 .cell strong {
+section.menu2 .cell p, section.menu2 .cell h4 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
+}
+section.menu2 .cell strong {
+  margin-right: 20px;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
 }
 section.menu2 .cell > div:first-child {
+  padding: 5px;
   flex-grow: 2;
 }
 section.menu2 .cell div > div {

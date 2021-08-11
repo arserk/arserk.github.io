@@ -42,7 +42,7 @@ section.home2 {
             margin-left: 30px;
             color: lighten(black, 50%);
         }
-        strong {
+        h4 {
             margin-bottom: 5px;
         }
         .circle {
@@ -84,10 +84,14 @@ section.home3 {
     .cell {
         flex-direction: column;
         overflow: hidden;
-        @include child-on-right(4);
+        position: relative;
+        /*first declaration=element(child number), 
+        second declaration=height of element (in px, from bottom)*/
+        @include child-on-right(4, 22);
+        padding-bottom: 5px;
         .image-crop{
             margin-bottom: 5px;
-            height: 200px;
+            height: 170px;
         }
         img {
             height: auto;

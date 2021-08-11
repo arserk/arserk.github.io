@@ -7,8 +7,11 @@
     &--rounded {
         border-radius: 20px;
     }
-    strong, p {
-        margin: 5px 0 0 10px;
+    h4, p {
+        margin: 6px 0 0 10px;
+    }
+    p {
+        margin-bottom: 10px;
     }
     &__new {
         border-radius: 4px;

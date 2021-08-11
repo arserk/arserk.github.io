@@ -1,53 +1,32 @@
-
-.heart {
-    .fas {
-        color: transparent;
-    }
-    &:hover, &:active {
-        > .fas, .far {
-            animation: fill 400ms forwards;
-        }
-    }
-}
-@keyframes fill {
-    to {
-        color: $color-primary;
-    }
-}
-
 .fa-heart {
     font-size: x-large;
     transform: scale(1, 1.1);
 }
 
-/*
 .heart {
-    position: relative;
-    overflow: hidden;
     .fas {
         color: transparent;
-        &::after {
-            content: "";
-            display: block;
-            padding: 0.50em;
-            position: absolute;
-            top: 10px;
-            left: 15px;
-            background: $color-gradiant;
-            transform: translateY(1em);
-            overflow: hidden;
-        }
+        background: $color-gradiant-invert;
+        -webkit-background-clip: text;
+        background-size: 100% 60%;
+        background-repeat: no-repeat;
+        background-position: 50% 200%;
     }
     &:hover {
-        & .fas::after {
-            animation: fill 600ms forwards ease;
+        & .fas {
+            animation: bgFadeIn 600ms ease forwards;
+        }
+        & .far {
+            animation: fadeOut 500ms ease forwards;
         }
     }
-    
 }
-@keyframes fill {
-    to {
-        transform: translateY(0);
-    }
+
+@keyframes bgFadeIn {
+    to {background-position: 50% 50%}
 }
-*/
+
+@keyframes fadeOut {
+    0%, 70% {opacity: 0.5}
+    100% {opacity: 0}
+}

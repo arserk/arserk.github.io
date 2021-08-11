@@ -1,18 +1,34 @@
+section.menu1, .menu2 {
+    opacity: 0;
+    animation: progressive-box 1800ms ease forwards;
+}
 
 section.menu2 .cell{
-    @for $i from 1 through 4 {
+    opacity: 0;
+    @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
-            animation: progressive 500ms ease-in;
-            animation-delay: #{$i * 0.5}s;
+            animation: progressive-cells 500ms ease-in forwards;
+            animation-delay: #{$i * 0.3}s;
         }
     }
 }
 
-@keyframes progressive {
+@keyframes progressive-cells {
     from {
-        transform: translateY(100px);
+        transform: translateY(20px);
+        opacity: 0;
     }
     to {
         transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes progressive-box {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
