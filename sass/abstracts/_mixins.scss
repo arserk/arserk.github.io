@@ -21,3 +21,9 @@
         transform: scale(1.01);
     }
 }
+
+@mixin query-desktop {
+    @media screen and (min-width: map-get($breakpoints, desktop)){
+        @content;
+    }
+}

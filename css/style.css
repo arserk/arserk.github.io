@@ -1,5 +1,3 @@
-/*Loading spinner -number of rotations*/
-/* one rotation = 1second*/
 footer p, h1 {
   font-family: "Shrikhand", cursive;
 }
@@ -58,11 +56,18 @@ h3 {
   color: #4d4d4d;
 }
 
+/* "h4" = dishes names */
 h4 {
   font-weight: bold;
   font-size: large;
 }
 
+/*
+h3, h4 {
+    @include query-desktop{
+        flex: 0 0 100%;
+    }
+}*/
 button {
   display: block;
   margin-left: auto;
@@ -183,16 +188,6 @@ button:hover {
   transform: rotate(0deg);
 }
 
-/* Spinner variant
-  .spinner {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid $color-primary;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    animation: spin 1s linear infinite;
-}
-*/
 .load-container {
   justify-content: center;
   align-items: center;
@@ -411,6 +406,11 @@ section.home2 .cell:hover::after {
 section.home2 .cell:hover i {
   color: #9356DC;
 }
+@media screen and (min-width: 1025px) {
+  section.home2 {
+    padding: 5% 30% 5% 30%;
+  }
+}
 
 section.home3 .cell {
   flex-direction: column;
@@ -434,6 +434,15 @@ section.home3 .cell img {
   position: relative;
   bottom: 30px;
   max-width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  section.home3 .flex-block--column {
+    flex-direction: row;
+  }
+  section.home3 .flex-block--column .cell {
+    margin-right: auto;
+    width: 22%;
+  }
 }
 
 section.menu1 {
@@ -460,6 +469,14 @@ section.menu1 div + div h1 {
 }
 section.menu1 div + div .heart {
   margin-right: 7%;
+}
+@media screen and (min-width: 1025px) {
+  section.menu1 div + div h1 {
+    margin-left: 30%;
+  }
+  section.menu1 div + div .heart {
+    margin-right: 30%;
+  }
 }
 
 section.menu2 {
@@ -498,6 +515,11 @@ section.menu2 .cell > div:first-child {
 }
 section.menu2 .cell div > div {
   justify-content: space-between;
+}
+@media screen and (min-width: 1025px) {
+  section.menu2 {
+    padding: 5% 30% 5% 30%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -78,6 +78,9 @@ section.home2 {
             }
         }
     }
+    @include query-desktop{
+        padding: $margin $margin-desktop $margin $margin-desktop;
+    }
 }
 
 section.home3 {
@@ -98,6 +101,15 @@ section.home3 {
             position: relative;
             bottom: 30px;
             max-width: 100%;
+        }
+    }
+    @include query-desktop{
+        .flex-block--column {
+            flex-direction: row;
+            .cell {
+                margin-right: auto;
+                width: 22%;
+            }
         }
     }
 }

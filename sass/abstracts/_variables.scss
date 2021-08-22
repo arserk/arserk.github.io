@@ -7,8 +7,16 @@ $color-greyed-out: lighten(black, 30%);
 $color-gradiant: linear-gradient(355deg, $color-primary 0%, $color-secondary 100%);
 $color-gradiant-invert: linear-gradient(355deg, $color-secondary 0%, $color-primary 100%);
 
-$margin: 5%;
-
 //Loading spinner -number of rotations
 // one rotation = 1second
 $spin-times: 2;
+
+$margin: 5%;
+$margin-desktop: 30%;
+
+//media queries breakpoints
+$breakpoints : (
+    "desktop": 1025px,
+    "tablet": 600px,
+);
+  

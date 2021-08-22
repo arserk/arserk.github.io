@@ -14,7 +14,15 @@ h3 {
     color: $color-greyed-out;
 }
 
+/* "h4" = dishes names */
 h4 {
     font-weight: bold;
     font-size: large;
 }
+
+/*
+h3, h4 {
+    @include query-desktop{
+        flex: 0 0 100%;
+    }
+}*/
