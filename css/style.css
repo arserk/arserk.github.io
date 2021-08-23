@@ -62,12 +62,6 @@ h4 {
   font-size: large;
 }
 
-/*
-h3, h4 {
-    @include query-desktop{
-        flex: 0 0 100%;
-    }
-}*/
 button {
   display: block;
   margin-left: auto;
@@ -270,6 +264,7 @@ section.menu2 .cell:nth-child(5) {
   animation-delay: 1.5s;
 }
 
+/*slide and fade-in effect for the items in the menu pages*/
 @keyframes progressive-cells {
   from {
     transform: translateY(20px);
@@ -280,6 +275,7 @@ section.menu2 .cell:nth-child(5) {
     opacity: 1;
   }
 }
+/*fade-in of the contents of a menu page*/
 @keyframes progressive-box {
   from {
     opacity: 0;
